@@ -16,5 +16,7 @@
 	<classpathentry kind="lib" path="G:/temp/NetMonitor/LNMweb/WebContent/WEB-INF/lib/echo3-app-3.0.1.jar"/>
 	<classpathentry kind="lib" path="G:/temp/NetMonitor/LNMweb/WebContent/WEB-INF/lib/echo3-webcontainer-3.0.1.jar"/>
 	<classpathentry kind="lib" path="G:/temp/NetMonitor/LNMweb/WebContent/WEB-INF/lib/echo3-extras-app-3.0.3.jar"/>
+	<classpathentry kind="lib" path="G:/temp/NetMonitor/LNMweb/WebContent/WEB-INF/lib/echo3-extras-webcontainer-3.0.3.jar"/>
+	<classpathentry kind="lib" path="G:/temp/NetMonitor/LNMweb/WebContent/WEB-INF/lib/snakeyaml-1.11.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
