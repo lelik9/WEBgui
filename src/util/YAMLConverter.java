@@ -15,16 +15,18 @@ public class YAMLConverter
 	}
 	
 	public String deviceToNameRequest(LinkedHashMap<String, String> Data, String func){
-		Map<String, String> data = new HashMap<String, String>();
+		Map<String, Object> data = new HashMap<String, Object>();
 
-		data.put("func", func);
 		for (Map.Entry<String, String> entry : Data.entrySet())
 		{
 			data.put(entry.getKey(), entry.getValue());
 		}
-		System.out.println(data);
-		System.out.println(data.get("func"));
-		String output = yaml.dump(data);
+		
+		data.put("func", func);
+
+		System.out.println("data1 -- "+data);
+		String output = yaml.dump(Data);
+		System.out.println("data2 -- "+output);
 		return output;
 	}
 	

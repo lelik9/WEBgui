@@ -14,7 +14,7 @@ public class ViewMainMenuListeners implements ActionListener
 {	
 	private String buttonName;
 	private NetInteractionController netcontroller;
-
+	
 	public ViewMainMenuListeners(String name, NetInteractionController netController)
 	{
 		buttonName = name;
@@ -24,9 +24,9 @@ public class ViewMainMenuListeners implements ActionListener
 @Override
 public void actionPerformed(ActionEvent arg0)
 {
-	System.out.println(buttonName);
-//	mainMenu.setButtonName(buttonName);
-	ViewDeviceMenuPane viewDevice = new ViewDeviceMenuPane(netcontroller);
+
+	
+	ViewDeviceMenuPane viewDevice = new ViewDeviceMenuPane(netcontroller, buttonName);
 	LnmWeb lnm = new LnmWeb().lnmWeb();
 	if(lnm.getDefaultWindow().getComponent("bottomRightSplitPane").getComponent("viewDevice") == null)
 	{

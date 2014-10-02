@@ -17,23 +17,24 @@ import nextapp.echo.extras.app.layout.AccordionPaneLayoutData;
 public class ViewDeviceMenuPane extends AccordionPane
 {
 	NetInteractionController netController;
-	private static LinkedHashMap<String, String> data = new LinkedHashMap<String, String>();
+	private static Map<String, Object> data = new HashMap<String, Object>();
 	private AccordionPaneLayoutData layoutData;
 	private Button button;
 	private Column buttonColumn;
 	
 	private String buttonName;
-	ViewMainMenuPane mainMenu;
+
 	
-	public ViewDeviceMenuPane(NetInteractionController netController)
+	public ViewDeviceMenuPane(NetInteractionController netController, String menuButton)
 	{
-	//	buttonName = mainMenu.getButtonName();
+
 		Map<Integer, List<String>> getData = new HashMap<Integer, List<String>>();
-		getData = netController.getInfo(data, "groups");
+		data.put("func", "groups");
+		getData = netController.getInfo(data);
 		
 		List<String> groups = getData.get(0);
 		List<String> devices = getData.get(1);
-
+		//Create groups menu
 		int n = 0;
 
 				layoutData = new AccordionPaneLayoutData();
@@ -49,7 +50,7 @@ public class ViewDeviceMenuPane extends AccordionPane
 	        
 	        n++;
 		}
-		
+		//Create devices menu
 		n = 0;
 		
 				layoutData = new AccordionPaneLayoutData();
@@ -61,7 +62,7 @@ public class ViewDeviceMenuPane extends AccordionPane
 		while(devices.size() > n)
 			{
 				button = new Button(devices.get(n)); 
-				button.addActionListener(new ViewDeviceMenuListeners(devices.get(n), netController));
+				button.addActionListener(new ViewDeviceMenuListeners(devices.get(n), netController, menuButton));
 				buttonColumn.add(button);
 	        n++;
 		}

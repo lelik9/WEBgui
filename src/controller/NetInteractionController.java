@@ -112,10 +112,11 @@ public String receiveMessageFromServer() {
 		return returnMessage + "}";
 	}
 
-public Map<Integer, List<String>> getInfo(LinkedHashMap<String, String> Data, String func) 
+public Map<Integer, List<String>> getInfo(Map<String, Object> Data) 
 {
-
-	String request = yamlConverter.deviceToNameRequest(Data, func);
+	Yaml yaml  = new Yaml();
+	
+	String request = yaml.dump(Data);
 	System.out.println("sended " + request);
 	sendMessageToServer(request);
 	

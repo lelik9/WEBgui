@@ -9,10 +9,10 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import controller.NetInteractionController;
-import functions.TableCreate;
 import windows.accordionPane.ViewDeviceMenuPane;
 import windows.accordionPane.ViewMainMenuPane;
 import windows.actionListeners.TopPanelActionListeners;
+import windows.table.TableCreate;
 import nextapp.echo.app.Alignment;
 import nextapp.echo.app.Button;
 import nextapp.echo.app.Color;

@@ -11,6 +11,8 @@ import java.util.Map;
 
 
 
+
+import util.XMLParser;
 import windows.actionListeners.ViewMainMenuListeners;
 import controller.NetInteractionController;
 import nextapp.echo.app.Button;
@@ -40,35 +42,41 @@ public class ViewMainMenuPane extends AccordionPane
 
 	public ViewMainMenuPane(NetInteractionController netController)  
 	{
-	//	netController = netController;
-		Map<Integer, List<String>> getData = new HashMap<Integer, List<String>>();
+
+		List<String> tab = new ArrayList<String>();		
+		List<String> buttons = new ArrayList<String>();	
+		XMLParser xml = new XMLParser();
 		
-		data.put("windowName", "ViewWindow");
-		getData = netController.getInfo(data, "button");
-		
+		tab = xml.XMLParser("Tabs","¬кладки");
+
+		System.out.println(tab);
 		List<String> tmpTab = new ArrayList<String>();
-		List<String> tab = getData.get(1);
-		List<String> buttonName = getData.get(0);
+
 		
 		int n = 0;
-		while(buttonName.size() > n)
+		while(tab.size() > n)
 		{
 			if(!tmpTab.contains(tab.get(n)))
 			{
 				layoutData = new AccordionPaneLayoutData();
 				layoutData.setTitle(tab.get(n));
+				buttons = xml.XMLParser("tab",tab.get(n));
+				int i = 0;
+	
+						buttonColumn = new Column();
+						buttonColumn.setLayoutData(layoutData);
+						add(buttonColumn);	
+						tmpTab.add(tab.get(n));
+				while(buttons.size() > i)
+				{					
 				
-				buttonColumn = new Column();
-				buttonColumn.setLayoutData(layoutData);
-				add(buttonColumn);				
-				tmpTab.add(tab.get(n));
-
+					button = new Button(buttons.get(i)); 
+					button.addActionListener(new ViewMainMenuListeners(buttons.get(i), netController));
+					buttonColumn.add(button);
+					
+					i++;
+				}
 			}
-
-			button = new Button(buttonName.get(n)); 
-			button.addActionListener(new ViewMainMenuListeners(buttonName.get(n), netController));
-	        buttonColumn.add(button);
-	        
 	        n++;
 		}
 		

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Tabs name="Вкладки">
+	<tab name="Сетевые устройства">
+		<button name="arp"> 
+	
+		</button>
+		<button name="interface">
+			<inf name="interface description"></inf>
+			<inf name="mac"></inf>
+		</button>
+	</tab>
+	<tab name="Серверы">
+		<button name="arp"></button>
+	</tab>
+	<tab name="Принтеры">
+		<button name="arp">get</button>
+	</tab>
+	<tab name="Карты сетей">
+		<button name="arp">get</button>
+	</tab>
+	<tab name="Графики">
+		<button name="arp">get</button>
+	</tab>
+</Tabs>
