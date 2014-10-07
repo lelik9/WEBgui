@@ -13,7 +13,7 @@ public class Login
 		
 		if(login.equals("Alex") || password.equals(" "))
 		{
-			lnm.connect();
+			lnm.viewWindow(netController);
 		}else
 		{
 			lnm.AddError("Не верное имя пользователя или пароль.");

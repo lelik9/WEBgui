@@ -45,7 +45,7 @@ public class ViewWindow extends ContentPane
 		//	setBackgroundImage(fil);
 		Alignment ALIGN_BOTTOM = new Alignment(Alignment.BOTTOM, Alignment.DEFAULT);
 		Label label = new Label("test");
-		TopPanelActionListeners listner = new TopPanelActionListeners();
+		TopPanelActionListeners listner = new TopPanelActionListeners(netController);
 		
 		SplitPane mainSplitPane = new SplitPane(SplitPane.ORIENTATION_VERTICAL, new Extent(10, Extent.PERCENT));
 		mainSplitPane.setBackground(Color.BLUE);

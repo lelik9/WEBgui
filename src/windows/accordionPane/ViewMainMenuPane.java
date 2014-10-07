@@ -23,22 +23,14 @@ import nextapp.echo.extras.app.layout.AccordionPaneLayoutData;
 public class ViewMainMenuPane extends AccordionPane
 {
 	NetInteractionController netController;
-	private static LinkedHashMap<String, String> data = new LinkedHashMap<String, String>();
+
 	private AccordionPaneLayoutData layoutData;
 	private Button button;
 	private Column buttonColumn;
 	
 	public String buttonName;
 	
-	public String getButtonName()
-	{
-		return buttonName;
-	}
 
-	public void setButtonName(String buttonName)
-	{
-		this.buttonName = buttonName;
-	}
 
 	public ViewMainMenuPane(NetInteractionController netController)  
 	{

@@ -66,6 +66,8 @@ public class ViewDeviceMenuListeners implements ActionListener
 			{
 				AllTableModel.setDeviceInfo(getData);
 				AllTableModel.setColumnName(data);
+				lnm.getDefaultWindow().getComponent("bottomCentralSplitPane").removeAll();
+				lnm.getDefaultWindow().getComponent("bottomCentralSplitPane").add(table.TableCreate(getData.size(), data.size()-2));
 			}
 		
 	}

@@ -21,8 +21,7 @@ public class ViewDeviceMenuPane extends AccordionPane
 	private AccordionPaneLayoutData layoutData;
 	private Button button;
 	private Column buttonColumn;
-	
-	private String buttonName;
+
 
 	
 	public ViewDeviceMenuPane(NetInteractionController netController, String menuButton)

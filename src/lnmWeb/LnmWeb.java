@@ -9,9 +9,13 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import controller.NetInteractionController;
+import windows.AdminWindow;
+import windows.ConfWindow;
 import windows.ErrorWindow;
 import windows.LoginWindow;
 import windows.ViewWindow;
+import windows.DiscoverDeviceWindow;
 import nextapp.echo.app.ApplicationInstance;
 import nextapp.echo.app.Border;
 import nextapp.echo.app.Color;
@@ -39,19 +43,40 @@ public class LnmWeb extends ApplicationInstance
 		return window;
 	}
 	
-	public void connect() 
+	public void viewWindow(NetInteractionController netController) 
 	{
-		
+		//Переход в окно просмотра информации
 		lnmWeb().getDefaultWindow().setContent(new ViewWindow());
+	
+	}
+	
+	public void confWindow(NetInteractionController netController) 
+	{
+		//Переход в окно настроек
+		lnmWeb().getDefaultWindow().setContent(new ConfWindow(netController));
+	
+	}
+	
+	public void adminWindow(NetInteractionController netController) 
+	{
+		//Переход в окно администрирования
+		lnmWeb().getDefaultWindow().setContent(new AdminWindow());
 	
 	}
 	
 	public void AddError(String error)
 	{
-		
+		//Всплывающее окно ошибок
 		ErrorWindow errorWindow = new ErrorWindow();
 		Component content = lnmWeb().getDefaultWindow().getContent();
-		content.add(errorWindow.ErrorWindow("Не верное имя пользователя или пароль."));
+		content.add(errorWindow.ErrorWindow(error));
+	}
+	
+	public void DiscoverDeviceWindow(NetInteractionController netController)
+	{
+		DiscoverDeviceWindow discoverWindow = new DiscoverDeviceWindow();
+		Component content = lnmWeb().getDefaultWindow().getContent();
+		content.add(discoverWindow.DiscoverDeviceWindow(netController));
 	}
 
 }

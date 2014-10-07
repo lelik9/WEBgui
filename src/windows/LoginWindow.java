@@ -55,7 +55,7 @@ public LoginWindow()
 
       
 		WindowPane loginWindow = new WindowPane();
-		loginWindow.setTitle("Welcom to LNM");
+		loginWindow.setTitle("Welcome to LNM");
 		loginWindow.setContentHeight(new Extent(100));
 		loginWindow.setResizable(false);
 		loginWindow.setClosable(false);

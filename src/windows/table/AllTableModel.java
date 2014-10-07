@@ -27,6 +27,9 @@ public class AllTableModel extends AbstractTableModel
 	}
 
 	public static void setDeviceInfo(Map<Integer, List<String>> deviceInfo) {
+		
+		//DeviceInfo.clear();
+		//DeviceInfo.putAll(deviceInfo);
 		DeviceInfo = deviceInfo;
 	}
 
@@ -61,9 +64,8 @@ public class AllTableModel extends AbstractTableModel
 	@Override
 	public Object getValueAt(int row, int col)
 		{
-		
-
 			getColumnName(col);
+
 			if(DeviceInfo.get(col).size() == 0)
 			{
 				return "";
@@ -72,18 +74,7 @@ public class AllTableModel extends AbstractTableModel
 				return DeviceInfo.get(col).get(row);
 			}
 
-/*
-			// TODO Auto-generated method stub
-		//	Map<Integer, List<String>> device = DeviceInfo;
 
-			List<String> err = DeviceInfo.get(arg1);
-			row = err.size()-1;
 
-			String data = err.get(arg0+1);
-			if(data == null){data = "0";}
-			fireTableDataChanged();
-			
-			return data;
-*/
 		}
 }
