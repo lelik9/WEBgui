@@ -28,7 +28,7 @@ public class ConfDeviceMenuPane extends AccordionPane
 	{		
 		Map<Integer, List<String>> getData = new HashMap<Integer, List<String>>();
 		data.put("func", "confDevice");
-		data.put("confFunc", "devInfo");
+		data.put("confFunc", "devFullInfo");
 		
 		//Лист с именами столбцов таблицы
 		Map<String, Object> columnName = new HashMap<String, Object>();

@@ -1,5 +1,6 @@
 package windows.actionListeners;
 
+import windows.ConfDeviceWindow;
 import windows.ConfGroupWindow;
 import windows.ErrorWindow;
 import windows.accordionPane.ConfDeviceMenuPane;
@@ -42,8 +43,10 @@ public class ConfMainMenuListeners
         	//Обработчик для кнопки вызывающий окно добавления устройств
         	addButton.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent e) {
-        	LnmWeb lnmWeb = new LnmWeb();
-        	lnmWeb.DiscoverDeviceWindow(netController);
+        	LnmWeb lnmWeb = new LnmWeb().lnmWeb();
+        	ConfDeviceWindow confDev = new ConfDeviceWindow(netController);
+        	
+        	lnmWeb.getDefaultWindow().getContent().add(confDev.DiscoverDeviceWindow());
         }
         });
         	
@@ -54,8 +57,10 @@ public class ConfMainMenuListeners
         	//Обработчик для кнопки вызывающий окно редактирования устройств
         	editButton.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent e) {
-        	LnmWeb lnmWeb = new LnmWeb();
-        	lnmWeb.DiscoverDeviceWindow(netController);
+        	LnmWeb lnmWeb = new LnmWeb().lnmWeb();
+        	ConfDeviceWindow confDev = new ConfDeviceWindow(netController);
+        	
+        	lnmWeb.getDefaultWindow().getContent().add(confDev.EditDevWindow());
         }
         });
         	

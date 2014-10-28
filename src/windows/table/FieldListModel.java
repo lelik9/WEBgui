@@ -3,10 +3,11 @@ package windows.table;
 import java.util.ArrayList;
 import java.util.List;
 
+import nextapp.echo.app.event.ListDataListener;
 import nextapp.echo.app.list.AbstractListModel;
 import nextapp.echo.app.list.ListModel;
 
-public class FieldListModel extends AbstractListModel implements ListModel
+public class FieldListModel extends AbstractListModel 
 {
 	private List<String> list;
 	public List<String> getList()
@@ -23,6 +24,7 @@ public class FieldListModel extends AbstractListModel implements ListModel
 	public Object get(int index)
 	{
 		// TODO Auto-generated method stub
+		
 		return list.get(index);
 	}
 
@@ -32,6 +34,12 @@ public class FieldListModel extends AbstractListModel implements ListModel
 		// TODO Auto-generated method stub
 		return list.size();
 	}
+	
+	protected void fireContentsChanged(int index0,
+            int index1)
+            {
+
+            }
 
 	
 }

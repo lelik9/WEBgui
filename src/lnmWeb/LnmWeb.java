@@ -15,7 +15,7 @@ import windows.ConfWindow;
 import windows.ErrorWindow;
 import windows.LoginWindow;
 import windows.ViewWindow;
-import windows.DiscoverDeviceWindow;
+import windows.ConfDeviceWindow;
 import nextapp.echo.app.ApplicationInstance;
 import nextapp.echo.app.Border;
 import nextapp.echo.app.Color;
@@ -72,11 +72,5 @@ public class LnmWeb extends ApplicationInstance
 		content.add(errorWindow.ErrorWindow(error));
 	}
 	
-	public void DiscoverDeviceWindow(NetInteractionController netController)
-	{
-		DiscoverDeviceWindow discoverWindow = new DiscoverDeviceWindow();
-		Component content = lnmWeb().getDefaultWindow().getContent();
-		content.add(discoverWindow.DiscoverDeviceWindow(netController));
-	}
 
 }
